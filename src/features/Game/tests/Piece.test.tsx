@@ -41,3 +41,13 @@ it("renders a black rook", () => {
 	render(<Piece type="rook" black/>);
 	expect(screen.getByText("♜")).toBeInTheDocument();
 });
+
+it("renders a white queen", () => {
+	render(<Piece type="queen"/>);
+	expect(screen.getByText("♕")).toBeInTheDocument();
+});
+
+it("renders a black queen", () => {
+	render(<Piece type="queen" black/>);
+	expect(screen.getByText("♛")).toBeInTheDocument();
+});
