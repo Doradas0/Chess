@@ -31,3 +31,13 @@ it("renders a black bishop", () => {
 	render(<Piece type="bishop" black/>);
 	expect(screen.getByText("♝")).toBeInTheDocument();
 });
+
+it("renders a white rook", () => {
+	render(<Piece type="rook"/>);
+	expect(screen.getByText("♖")).toBeInTheDocument();
+});
+
+it("renders a black rook", () => {
+	render(<Piece type="rook" black/>);
+	expect(screen.getByText("♜")).toBeInTheDocument();
+});
