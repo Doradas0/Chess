@@ -1,0 +1,33 @@
+import '@testing-library/jest-dom'
+import {render, screen} from '@testing-library/react'
+import { Piece } from "../components/Piece"
+
+it("renders a white pawn", () => {
+	render(<Piece />);
+	expect(screen.getByText("♙")).toBeInTheDocument();
+});
+
+it("renders a black pawn", () => {
+	render(<Piece  black/>);
+	expect(screen.getByText("♟")).toBeInTheDocument();
+});
+
+it("renders a white knight", () => {
+	render(<Piece type="knight"/>);
+	expect(screen.getByText("♘")).toBeInTheDocument();
+});
+
+it("renders a black knight", () => {
+	render(<Piece type="knight" black/>);
+	expect(screen.getByText("♞")).toBeInTheDocument();
+});
+
+it("renders a white bishop", () => {
+	render(<Piece type="bishop"/>);
+	expect(screen.getByText("♗")).toBeInTheDocument();
+});
+
+it("renders a black bishop", () => {
+	render(<Piece type="bishop" black/>);
+	expect(screen.getByText("♝")).toBeInTheDocument();
+});

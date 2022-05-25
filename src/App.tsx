@@ -1,10 +1,10 @@
-import { Pawn } from "./features/Game";
+import { Piece } from "./features/Game";
 
 const App = () => {
 	return (
 		<>
-			<Pawn black/>
-			<Pawn />
+			<Piece />
+			<Piece black/>
 		</>
 	);
 };

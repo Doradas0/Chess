@@ -1,1 +1,1 @@
-export * from "./components/Pawn";
+export * from "./components/Piece";
