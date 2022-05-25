@@ -1,3 +1,4 @@
+import React from "react"
 export type PieceType = {
 	//default is white
 	black?: boolean;
@@ -8,4 +9,5 @@ export type PieceType = {
 export type SquareProps = {
 	//default is white
 	black?: boolean;
+	children?: React.ReactNode
 }
