@@ -11,3 +11,7 @@ export type SquareProps = {
 	black?: boolean;
 	children?: React.ReactNode
 }
+
+export type BoardProps = {
+	children?: React.ReactNode
+}
