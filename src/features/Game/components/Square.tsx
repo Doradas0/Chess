@@ -6,7 +6,7 @@ export const Square = (props: SquareProps) => {
 	const stroke = black ? "white" : "black";
 	return (
 		<div
-			data-testid="square"
+			data-testid={black ? "square-black" : "square-white"}
 			style={{
 				backgroundColor: fill,
 				color: stroke,
