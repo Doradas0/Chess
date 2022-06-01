@@ -17,6 +17,7 @@ export type PieceProps = {
 export type SquareProps = {
 	//default is white
 	black?: boolean;
+	isHighlighted?: boolean;
 	children?: React.ReactNode
 }
 

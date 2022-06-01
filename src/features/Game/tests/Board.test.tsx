@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Board } from "../components/Board";
-import { piecevalues} from "../libs/pieceValues";
+import { piecevalues } from "../libs/pieceValues";
 
 it("Renders 64 squares", () => {
 	render(<Board />);
@@ -55,4 +55,11 @@ it("Renders the white starting position", () => {
 	expect(squares[61]).toHaveTextContent(piecevalues.WHITE_BISHOP);
 	expect(squares[62]).toHaveTextContent(piecevalues.WHITE_KNIGHT);
 	expect(squares[63]).toHaveTextContent(piecevalues.WHITE_ROOK);
+});
+
+it("Highlights a square when clicked", () => {
+	render(<Board />);
+	const squares = screen.getAllByTestId(/square/);
+	fireEvent.click(squares[0]);
+	expect(squares[0]).toHaveStyle("background-color: red");
 });

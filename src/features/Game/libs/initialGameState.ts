@@ -1,5 +1,5 @@
 import { PieceType } from "../types";
-export const initialBoardState: PieceType[] = [
+export const initialPieceState: PieceType[] = [
 	{ black: true, type: "rook", position: [0, 0] },
 	{ black: true, type: "knight", position: [0, 1] },
 	{ black: true, type: "bishop", position: [0, 2] },
@@ -33,3 +33,15 @@ export const initialBoardState: PieceType[] = [
 	{ black: false, position: [6, 6] },
 	{ black: false, position: [6, 7] },
 ];
+
+const generateBoard = () => {
+	const squares = [];
+	for (let i = 0; i < 64; i++) {
+		const column = i % 8;
+		const row = Math.floor(i / 8);
+		squares.push({ row: row, column: column, isHighlighted: false });
+	}
+	return squares;
+};
+
+export const initialBoardState: any[] = generateBoard();

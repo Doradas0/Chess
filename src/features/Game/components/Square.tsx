@@ -1,8 +1,8 @@
 import { SquareProps } from "../types";
 
 export const Square = (props: SquareProps) => {
-	const { black, children } = props;
-	const fill = black ? "black" : "white";
+	const { black, isHighlighted, children } = props;
+	const fill = isHighlighted? "red" : black ? "black" : "white";
 	const stroke = black ? "white" : "black";
 	return (
 		<div
@@ -16,7 +16,7 @@ export const Square = (props: SquareProps) => {
 				textAlign: "center",
 			}}
 		>
-			{props.children}
+			{children}
 		</div>
 	);
 };
