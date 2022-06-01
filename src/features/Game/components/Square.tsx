@@ -12,6 +12,8 @@ export const Square = (props: SquareProps) => {
 				color: stroke,
 				width: "100%",
 				height: "100%",
+				fontSize: "3rem",
+				textAlign: "center",
 			}}
 		>
 			{props.children}
