@@ -56,10 +56,3 @@ it("Renders the white starting position", () => {
 	expect(squares[62]).toHaveTextContent(piecevalues.WHITE_KNIGHT);
 	expect(squares[63]).toHaveTextContent(piecevalues.WHITE_ROOK);
 });
-
-it("Highlights a square when clicked", () => {
-	render(<Board />);
-	const squares = screen.getAllByTestId(/square/);
-	fireEvent.click(squares[0]);
-	expect(squares[0]).toHaveStyle("background-color: red");
-});

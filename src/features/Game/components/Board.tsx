@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Square } from "./Square";
 import { Piece } from "./Piece";
-import { initialBoardState } from "../libs/initialGameState";
 import { initialPieceState } from "../libs/initialGameState";
 
 export const Board = () => {
 	const [pieceState, setPieceState] = useState([...initialPieceState]);
-	const [boardState, setBoardState] = useState([...initialBoardState]);
 
 	const getPieceForSqaure = (row: number, column: number) => {
 		return pieceState.find(
@@ -23,23 +21,14 @@ export const Board = () => {
 			<div
 				key={boardIndex}
 				style={{ width: "12.5%", height: "12.5%" }}
-				onClick={() => handleSquareClick(boardIndex)}
 			>
 				<Square
 					black={isSqaureBlack}
-					isHighlighted={boardState[boardIndex].isHighlighted}
 				>
 					{piece && <Piece type={piece.type} black={piece.black} />}
 				</Square>
 			</div>
 		);
-	};
-
-	const handleSquareClick = (boardIndex: number) => {
-		const newBoardState = [...boardState];
-		console.log(newBoardState[boardIndex]);
-		boardState[boardIndex].isHighlighted = true;
-		setBoardState(newBoardState);
 	};
 
 	const squares = [];

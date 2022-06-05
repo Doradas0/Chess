@@ -33,15 +33,3 @@ export const initialPieceState: PieceType[] = [
 	{ black: false, position: [6, 6] },
 	{ black: false, position: [6, 7] },
 ];
-
-const generateBoard = () => {
-	const squares = [];
-	for (let i = 0; i < 64; i++) {
-		const column = i % 8;
-		const row = Math.floor(i / 8);
-		squares.push({ row: row, column: column, isHighlighted: false });
-	}
-	return squares;
-};
-
-export const initialBoardState: any[] = generateBoard();
